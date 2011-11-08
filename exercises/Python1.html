@@ -1,0 +1,40 @@
+<html data-require="math">
+   <head>
+	<meta charset="UTF-8" />
+	<title>Exponent rules</title>
+	<script src="../khan-exercise.js"></script>
+
+	<style>
+		.tt {
+				font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace
+					color:red; !important;
+		}
+	</style>
+</head>
+      <body>
+          <div class="exercise">
+              <div class="vars">
+              	<var id="LEN"> randRange(3,10) </var>
+				<var id="LIST"> randRangeUnique(-10,10,LEN) </var>
+				<var id ="IDX"> randRange(2,LEN) </var> 	
+				<var id ="ANSWER">LIST[IDX]</var>
+              </div>
+
+              <div class="problems">
+                  <div id="problem-type-or-description">
+                      <div class="problem">
+                      	<p class = "tt" > x = [<var> LIST </var>]</p>
+                      	<p class = "tt" > y = x[<var>IDX</var>] </p>
+                      	</div>
+                      <p class="question">
+                      	What is the value of <span class ="tt" > y </span>?</p>
+                      <p class="solution"><var>LIST[IDX]</var>[</p>
+                  </div>
+              </div>
+
+              <div class="hints">
+                  <!-- Any hints to show to the student. -->
+              </div>
+          </div>
+      </body>
+  </html>
