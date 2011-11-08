@@ -1,0 +1,51 @@
+<html data-require="math">
+    <head> 
+        <title>Python Excercises</title>
+        	<script src="../khan-exercise.js"></script>
+        	<style> 
+      			.tt input{
+ 					font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace
+					color:red;
+		  			}
+		</style>
+    </head>
+      <body>
+          <div class="exercise">
+              <div class="vars" data-ensure= "IDX2 > IDX1">
+              	<var id="LEN"> randRange(6,10) </var>
+				<var id="LIST"> randRangeUnique(-10,10,LEN) </var>
+				<var id ="IDX1"> randRange(2,LEN) </var> 
+				<var id ="IDX2"> randRange(2,LEN) </var> 
+				<var id ="ANSWER"> (function() {
+					var sum = 0; 
+					for(var i = IDX1; i < IDX2; i++){
+						sum += LIST[i];
+					}
+					return sum;
+				})()</var>
+              </div>
+
+              <div class="problems">
+                  <div id="problem-type-or-description">
+                      <div class="problem">
+                      	<p class = "tt" > x = [<var> LIST </var>]</p>
+                      	<p class = "tt" > y = sum(x[<var>IDX1</var>:<var>IDX2</var>]) </p>
+                      	</div>
+                      <p class="question">
+                      	What is the value of <span class ="tt" > y </span>?</p>
+                      <p class="solution"><var>(function() {
+					var sum = 0; 
+					for(var i = IDX1; i < IDX2; i++){
+						sum += LIST[i];
+					}
+					return sum;
+				})()</var>[</p>
+                  </div>
+              </div>
+
+              <div class="hints">
+                  <!-- Any hints to show to the student. -->
+              </div>
+          </div>
+      </body>
+  </html>
