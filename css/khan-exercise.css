@@ -222,8 +222,7 @@ div.timeline-total {
   width: 80px;
 }
 
-.user-activity.activated {
-  border: 2px solid #888;
+
 }
 
 .lite header, .lite footer, .lite #extras, .lite .exercise-badge, .lite .hint-box, .lite .related-video-box {
