@@ -4,8 +4,9 @@
         	<script src="../khan-exercise.js"></script>
         	<style> 
       			.tt input{
- 					font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace
+ 					font-family: monospace;
 					color:red;
+					
 		  			}
 		</style>
     </head>
@@ -17,20 +18,27 @@
 				<var id ="IDX1"> randRange(2,LEN) </var> 
 				<var id ="IDX2"> randRange(2,LEN) </var> 
 				<var id="STEP"> randRange(2,LEN/2) </var>
-				<var id ="ANSWER"> (function() {
+				<var id ="ANSWER">(function() {
 					var sum = 0; 
-					for(var i = IDX1; i < IDX2; i=i+3{
+					for(var i = IDX1; i < IDX2; i=i+STEP){
 						sum += LIST[i];
 					}
 					return sum;
 				})()</var>
+				<var id="TESTSTRING">    (function() {
+                  var addString = "";
+                  for(var i = (IDX1+STEP);i < IDX2; i=i+STEP){
+                  	addString += "+" + LIST[i];
+                  	}
+                  	return addString;
+                  	})() </var>
               </div>
 
               <div class="problems">
                   <div id="problem-type-or-description">
                       <div class="problem">
-                      	<p class = "tt" > x = [<var> LIST </var>]</p>
-                      	<p class = "tt" > y = sum(x[<var>IDX1</var>:<var>IDX2</var>:<var>STEP</var>]) </p>
+                      	<marquee loop= "infinite"; scrollamount= "425";><p class = "tt" style ="font-family: monospace; color:red;"> x = [<var> LIST </var>]</p>
+                      	<p class = "tt" > y = sum(x[<var>IDX1</var>:<var>IDX2</var>:<var>STEP</var>]) </p></marquee>
                       	</div>
                       <p class="question">
                       	What is the value of <span class ="tt" > y </span>?</p>
@@ -40,12 +48,25 @@
 						sum += LIST[i];
 					}
 					return sum;
-				})()</var>[</p>
+				})()</var></p>
                   </div>
               </div>
 
               <div class="hints">
-                  <!-- Any hints to show to the student. -->
+                  <p> The first digit included in the sum should start an an index of <var> IDX1 </var>. </p>
+                  <p> The digit at index <var>IDX1</var> is <var> LIST[IDX1] </var>. </p>
+                  <p> The sum should include the digits up to, but not including <var> IDX2 </var>.</p>
+                  <p> The digit at <var> IDX2 </var>  is <var> LIST[IDX2]</var>.</p>
+                  <p> You should count with a step size of <var> STEP </var>.</p>
+                  <p> This means you should add the digit(s): <var> "("+LIST[IDX1]+")"+
+                  (function() {
+                  var addString = "";
+                  for(var i = IDX1+STEP;i < IDX2; i=i+STEP){
+                  	addString +=" + ("+LIST[i] + ")";
+                  	}
+                  	return addString;
+                  	})()</var> </p>
+                  	
               </div>
           </div>
       </body>
