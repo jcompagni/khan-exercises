@@ -11,14 +11,15 @@
     </head>
       <body>
           <div class="exercise">
-              <div class="vars" data-ensure= "IDX2 > IDX1">
-              	<var id="LEN"> randRange(6,10) </var>
+              <div class="vars" data-ensure= "IDX2 > IDX1+STEP">
+              	<var id="LEN"> randRange(6,12) </var>
 				<var id="LIST"> randRangeUnique(-10,10,LEN) </var>
 				<var id ="IDX1"> randRange(2,LEN) </var> 
 				<var id ="IDX2"> randRange(2,LEN) </var> 
+				<var id="STEP"> randRange(2,LEN/2) </var>
 				<var id ="ANSWER"> (function() {
 					var sum = 0; 
-					for(var i = IDX1; i < IDX2; i++){
+					for(var i = IDX1; i < IDX2; i=i+3{
 						sum += LIST[i];
 					}
 					return sum;
@@ -29,13 +30,13 @@
                   <div id="problem-type-or-description">
                       <div class="problem">
                       	<p class = "tt" > x = [<var> LIST </var>]</p>
-                      	<p class = "tt" > y = sum(x[<var>IDX1</var>:<var>IDX2</var>]) </p>
+                      	<p class = "tt" > y = sum(x[<var>IDX1</var>:<var>IDX2</var>:<var>STEP</var>]) </p>
                       	</div>
                       <p class="question">
                       	What is the value of <span class ="tt" > y </span>?</p>
                       <p class="solution"><var>(function() {
 					var sum = 0; 
-					for(var i = IDX1; i < IDX2; i=i+3){
+					for(var i = IDX1; i < IDX2; i=i+STEP){
 						sum += LIST[i];
 					}
 					return sum;
